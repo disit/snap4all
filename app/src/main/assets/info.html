@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Info</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style type="text/css">
+                body {
+                    font-family: "Quicksand", sans-serif;
+                    background-color: #f8f0e6;
+                    color: #211c16;
+                    padding: 1rem 1.75rem;
+                    margin-bottom: 3rem;
+                    margin:0;
+                    margin-bottom:0.5rem;
+                }
+
+                br {
+                    margin-bottom: 1.5rem;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-bottom: 1.2rem;
+                    margin-top: 1.2rem;
+                }
+
+                h4 {
+                    margin-top: 0;
+                    margin-bottom: 0.4rem;
+                    padding: 0;
+                }
+        </style>
+    </head>
+
+    <body>
+
+        <h2>What is this</h2>
+
+        <p>Snap4All is a tool to configure a Node-RED installation on any Android phone so you can easily
+            setup your simple IoT projects using your phone as an edge device or deploy
+            <a href="https://www.snap4city.org">Snap4City</a> apps faster to a bigger scale.
+        </p>
+
+
+        <h2>Installation</h2>
+
+        <p>
+            <i>Make sure to have an internet connection at all times during the installation</i>.
+
+            <br/><br/>
+            If you encounter some errors just <i>close the app and tap exit on the notification</i>, then
+            open it again.
+
+            <br/><br/>
+            On the first app load the Termux base packages will be installed, this usually takes around 20
+            seconds after which the console button in the home page will be activated.
+
+            <br/><br/>
+            Once the Termux console has finished installing, you will be asked to grant the app the
+            permission to run in the background. This is necessary for the app to serve Node-RED at all
+            times, if you dismissed that dialog by accident just open the Android multitasking and you will
+            find it alongside Snap4All.
+
+            <br/><br/>
+            After that, the app will download Node-RED along with its <a href="#node-red-packages">additional
+            plugins</a> and setup them. This is the longest part of the installation since it can take up to
+            5 minutes depending on your phone and network speed.
+
+            <br/><br/>
+            In the future, everytime you use a new Node-RED Termux node that requires some additional
+            permissions you will have to grant them by acknowledging the corresponding alert dialogs.
+
+            <br/><br/>
+            <i>
+                <b>+</b> if the app is already open in the background, directly click the notification to
+                maximise it, not the app shortcut in your launcher.
+            </i>
+
+            <br/><br/>
+            <i>
+                <b>+</b> after clicking one of the Node-RED buttons it could happen that you see a "This
+                site can't be reached" error on your browser, in this case just wait a couple of seconds and
+                refresh the page.
+            </i>
+
+            <br/><br/>
+            <i>
+                <b>+</b> it's likely that a "starting node-red" toast is shown
+                several times, this is normal since the operating system closes
+                the server following Android's battery-saving policy, the
+                Termux:Boot service will try to restart it as soon as possible.
+            </i>
+        </p>
+
+        <h2>Structure</h2>
+
+        <p>
+            The app consists of the following main sections:
+
+            <h4>Termux console</h4>
+            This is the Termux console of your device in which you can run any
+            command. since you cannot install this app and the official Termux
+            app at the same time). Do your own research and use at your own
+            risk.
+
+            <br/><br/>
+            <h4>IoT app editor</h4>
+            Opens the IoT app editor of your local Node-RED server where you can
+            build your own IoT app using the preinstalled <a href="#node-red-packages">utility packages</a> for
+            Termux and Snap4All.
+
+            <br/><br/>
+            <h4>IoT app dashboard</h4>
+            Opens the IoT app dashboard of your local server where you can
+            monitor your IoT app after having configured it properly following the
+            <a href="https://nodered.org/docs/">Node-RED documentation</a>. We
+            recommend you to use this to display the contents of a
+            <a href="https://flows.nodered.org/node/node-red-dashboard">Node-RED dashboard</a>
+            app since it's an included package.
+        </p>
+
+
+        <h2 id="node-red-packages">Installed Packages</h2>
+
+        <p>
+            <h4>apt - Build utilities</h4>
+            cmake, make, clang, git, openssh, coreutils, nodejs, nano
+
+            <br/><br/>
+            <h4>npm - Node-RED packages</h4>
+            node-red, node-red-contrib-termux-api, node-red-dashboard, node-red-contrib-snap4city-user
+        </p>
+
+        <h2>User guide</h2>
+
+        <p>
+            <ol>
+                <li>
+                    Register on  <a href="https://www.snap4city.org/drupal/user/register">Snap4City</a> and save for later keys (1 and 2).
+                </li>
+                <li>
+                    Open Node-RED pressing the <u>IOT APP EDITOR</u> button in the home page.
+                </li>
+                <li>
+                    To edit, open the <u>fiware orion out v1</u> block double pressing on it.
+                </li>
+                <li>
+                    Fill the fields <u>Key 1</u> and <u>Key 2</u>.
+                </li>
+                <li>
+                    Click <u>Done</u> in the top right corner and then <u>Deploy</u> at the top of the page.
+                </li>
+                <li>
+                    Return into the Snap4All app and press the <u>DASHBOARD</u> button.
+                </li>
+                <li>
+                    Press the <u>BATTERY BUTTON</u> and your Node-RED example is working.
+                </li>
+            </ol>
+        </p>
+
+
+        <h2>Credits</h2>
+
+        <p>
+            This app is based on the <a href="https://termux.dev/en/">Termux</a> app by Fredrik Fornwall and
+            the
+            <a href="https://nodered.org/">Node-RED</a> app by IBM. The app has been developed under the
+            Snap4City project of the University of Florence, you can read more about who is involved on the
+            <a href="https://www.snap4city.org/214">Snap4City site</a>.
+        </p>
+
+
+        <h2>Licensing</h2>
+
+        <p>
+            The Snap4All app has been developed to realize
+            IoT/IoE edge devices for smart city and industry 4.0 applications,
+            by <a href="https://www.disit.org">DISIT Lab</a> for
+            <a href="https://www.km4city.org">Km4City</a> and
+            <a href="https://www.snap4city.org">Snap4City</a>.
+            <br/>
+            The IoT applications on Snap4All can exploit the sensors of your
+            mobile phone and may have a local user interface (the Node-RED dashboard). This can work as a
+            standalone solution for sending
+            messages to other IoT devices or IoT brokers connected to Snap4All,
+            Snap4City or other platforms.
+            <br/>
+            This app can be installed on any Android device, and allows you to
+            have an IoT application (a Node-RED server) running on your mobile
+            phone. The IoT application can be also produced into the mobile
+            applications as well as developed on other facilities and imported.
+            <br/>
+            The IoT application and corresponding editor are based on Node-RED
+            of the JS Foundation licensed under
+            <a href="https://github.com/node-red/node-red/blob/master/LICENSE"
+            >Apache License 2.0</a
+            >, with some additions/improvements provided by Snap4City DISIT lab
+            licensed under
+            <a href="https://github.com/disit/snap4city/blob/master/LICENSE">
+                Affero GPL license</a
+            >.
+            <br/>
+            Some of the innovative features that can be exploited into IoT
+            applications are provided by the Snap4City platform and can be
+            mounted on any other Node-RED installation. The Snap4City platform
+            is completely open source.
+            <br/>
+            In addition, some of the features, as the
+            <a href="https://flows.nodered.org/node/node-red-contrib-termux-api"
+            >Termux nodes</a
+            >, in Node-RED are specific for the Android platform. This mobile
+            app has been developed using Termux and the Termux API which is also
+            licensed under
+            <a href="https://github.com/roccomuso/termux/blob/master/LICENSE"
+            >MIT License 2017</a
+            >.
+            <br/>
+            The source code of the Snap4All mobile app can be accessed on the
+            <a href="https://github.com/disit">DISIT Lab's Github</a> or on the <a
+            href="https://github.com/albbus-stack/snap4all/tree/master">developer's Github</a>
+            and it is released according to the above licenses for their
+            respective aspects and components, and as <a
+            href="https://github.com/disit/snap4city/blob/master/LICENSE">Affero GPL</a> for the Snap4All
+            components. Modified elements of former tools and libraries are released according to the source
+            licenses.
+        </p>
+    </body>
+</html>

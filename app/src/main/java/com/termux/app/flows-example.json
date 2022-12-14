@@ -1,0 +1,800 @@
+[
+    {
+        "id": "7cb62eb9eade0e42",
+        "type": "tab",
+        "label": "Flow battery example 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fe35985eeef4342",
+        "type": "tab",
+        "label": "Flow wifi example 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ed5023f7d42c9c48",
+        "type": "tab",
+        "label": "Flow tpl-agencies example 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "df28481a1120caae",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ae5d28d5489d961a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "750cd5ea0f445792",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "df28481a1120caae",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "14b35d311b6574ec",
+        "type": "orion-service",
+        "name": "orionUNIFI",
+        "url": "broker1.snap4city.org",
+        "port": "8080"
+    },
+    {
+        "id": "284bfe8b1ba51697",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2b560290acbb928b",
+        "type": "ui_group",
+        "name": "Camera",
+        "tab": "284bfe8b1ba51697",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1d19b55ef72d69a9",
+        "type": "orion-service",
+        "name": "orionUNIFI",
+        "url": "broker1.snap4city.org",
+        "port": "8080"
+    },
+    {
+        "id": "21b6f3b867d62589",
+        "type": "ui_button",
+        "z": "7cb62eb9eade0e42",
+        "name": "",
+        "group": "750cd5ea0f445792",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "battery button",
+        "tooltip": "",
+        "color": "battery",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "5a7c036f0f2d57c3"
+            ]
+        ]
+    },
+    {
+        "id": "5a7c036f0f2d57c3",
+        "type": "termux-battery-status",
+        "z": "7cb62eb9eade0e42",
+        "name": "",
+        "topic": "",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "dffbe8b7f29432c5"
+            ]
+        ]
+    },
+    {
+        "id": "dffbe8b7f29432c5",
+        "type": "function",
+        "z": "7cb62eb9eade0e42",
+        "name": "batteryPayload",
+        "func": "msg.payload={\n    \"name\": \"battery\",\n    \"value\": parseFloat(msg.payload.percentage),\n    \"type\": \"float\"\n};\nmsg.payload=JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "25e54714cba82e6e",
+                "8eae5e96745122bd"
+            ]
+        ]
+    },
+    {
+        "id": "25e54714cba82e6e",
+        "type": "fiware-orion-out",
+        "z": "7cb62eb9eade0e42",
+        "name": "",
+        "tls": "",
+        "service": "14b35d311b6574ec",
+        "entype": "Ambiental",
+        "enid": "",
+        "userk1": "",
+        "passk2": "",
+        "tenant": "",
+        "servicepath": "",
+        "apikey": "",
+        "basicAuth": "",
+        "x": 190,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b4426c47a984567f",
+        "type": "inject",
+        "z": "7cb62eb9eade0e42",
+        "name": "battery timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "5a7c036f0f2d57c3"
+            ]
+        ]
+    },
+    {
+        "id": "8eae5e96745122bd",
+        "type": "debug",
+        "z": "7cb62eb9eade0e42",
+        "name": "batteryPayloadDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d18e4a67b92d8c23",
+        "type": "comment",
+        "z": "7cb62eb9eade0e42",
+        "name": "missing keys in fiware orion out v1",
+        "info": "In the node _fiware orion out v1_ fill the fields Key 1 and Key 2.",
+        "x": 200,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "28f1b995702181fc",
+        "type": "ui_button",
+        "z": "5fe35985eeef4342",
+        "name": "",
+        "group": "750cd5ea0f445792",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "get wifi info button",
+        "tooltip": "",
+        "color": "get wifi info",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "bd98ba85d281cc09"
+            ]
+        ]
+    },
+    {
+        "id": "491c1c6a6db07ba5",
+        "type": "function",
+        "z": "5fe35985eeef4342",
+        "name": "connectionStatePayload",
+        "func": "msg.payload={\n    \"name\": \"connection_state\",\n    \"value\": msg.payload.supplicant_state,\n    \"type\": \"string\"\n};\nmsg.payload=JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "c62a357036f6eccc",
+                "caabd7a423c862c6"
+            ]
+        ]
+    },
+    {
+        "id": "c62a357036f6eccc",
+        "type": "fiware-orion-out",
+        "z": "5fe35985eeef4342",
+        "name": "",
+        "tls": "",
+        "service": "14b35d311b6574ec",
+        "entype": "Ambiental",
+        "enid": "",
+        "userk1": "",
+        "passk2": "",
+        "tenant": "",
+        "servicepath": "",
+        "apikey": "",
+        "basicAuth": "",
+        "x": 390,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ba6c7a3c7c41ad64",
+        "type": "inject",
+        "z": "5fe35985eeef4342",
+        "name": "wifi timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "bd98ba85d281cc09"
+            ]
+        ]
+    },
+    {
+        "id": "caabd7a423c862c6",
+        "type": "debug",
+        "z": "5fe35985eeef4342",
+        "name": "connectionStateDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bd98ba85d281cc09",
+        "type": "termux-wifi-connectioninfo",
+        "z": "5fe35985eeef4342",
+        "name": "",
+        "topic": "",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "491c1c6a6db07ba5",
+                "670934ebca2f10df",
+                "d9a238d4713e0b07"
+            ]
+        ]
+    },
+    {
+        "id": "670934ebca2f10df",
+        "type": "function",
+        "z": "5fe35985eeef4342",
+        "name": "ssidPayload",
+        "func": "msg.payload={\n    \"name\": \"ssid\",\n    \"value\": msg.payload.ssid,\n    \"type\": \"string\"\n};\nmsg.payload=JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "eb2b5c42b1f40d37",
+                "c62a357036f6eccc"
+            ]
+        ]
+    },
+    {
+        "id": "eb2b5c42b1f40d37",
+        "type": "debug",
+        "z": "5fe35985eeef4342",
+        "name": "ssidPayloadDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e47f65154bfd642c",
+        "type": "debug",
+        "z": "5fe35985eeef4342",
+        "name": "ipPayloadDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d9a238d4713e0b07",
+        "type": "function",
+        "z": "5fe35985eeef4342",
+        "name": "ipPayload",
+        "func": "msg.payload={\n    \"name\": \"ip\",\n    \"value\": msg.payload.ip,\n    \"type\": \"string\"\n};\nmsg.payload=JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "e47f65154bfd642c",
+                "c62a357036f6eccc"
+            ]
+        ]
+    },
+    {
+        "id": "f46f27d01fd22194",
+        "type": "comment",
+        "z": "5fe35985eeef4342",
+        "name": "missing keys in fiware orion out v1",
+        "info": "In the node _fiware orion out v1_ fill the fields Key 1 and Key 2.",
+        "x": 400,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "308e46b1f3131d86",
+        "type": "ui_button",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "group": "750cd5ea0f445792",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "tpl-agencies button",
+        "tooltip": "",
+        "color": "tpl agencies",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "bcf727bf327574f0",
+                "47e529dc59a77024"
+            ]
+        ]
+    },
+    {
+        "id": "5b70275400183b87",
+        "type": "inject",
+        "z": "ed5023f7d42c9c48",
+        "name": "tpl-agencies timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 40,
+        "wires": [
+            [
+                "bcf727bf327574f0",
+                "47e529dc59a77024"
+            ]
+        ]
+    },
+    {
+        "id": "3caca5fdbc63c1b8",
+        "type": "termux-sms-send",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "topic": "",
+        "numbers": "",
+        "x": 770,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "bcf727bf327574f0",
+        "type": "termux-dialog",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "topic": "numbers",
+        "hint": "",
+        "title": "Numbers",
+        "textarea": true,
+        "password": false,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "101d6ce308f3990c"
+            ]
+        ]
+    },
+    {
+        "id": "ee326bb19bf5e493",
+        "type": "function",
+        "z": "ed5023f7d42c9c48",
+        "name": "numbersPayload",
+        "func": "msg.payload = msg.payload.text\nmsg.topic = \"numbers\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "e78e95aa1d41b674",
+                "76b1a27a30a0ed03"
+            ]
+        ]
+    },
+    {
+        "id": "101d6ce308f3990c",
+        "type": "json",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "ee326bb19bf5e493"
+            ]
+        ]
+    },
+    {
+        "id": "47e529dc59a77024",
+        "type": "tpl-agencies",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "authentication": "",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "47c86da191e28a6d"
+            ]
+        ]
+    },
+    {
+        "id": "47c86da191e28a6d",
+        "type": "function",
+        "z": "ed5023f7d42c9c48",
+        "name": "tplAgenciesPayload",
+        "func": "msg.payload = JSON.stringify(msg.payload)\nmsg.topic = \"tplagencies\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "e78e95aa1d41b674",
+                "d422e032fce74840"
+            ]
+        ]
+    },
+    {
+        "id": "e78e95aa1d41b674",
+        "type": "join",
+        "z": "ed5023f7d42c9c48",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "d7cdc6e2985db78b",
+                "e899e3834905ac83"
+            ]
+        ]
+    },
+    {
+        "id": "d422e032fce74840",
+        "type": "debug",
+        "z": "ed5023f7d42c9c48",
+        "name": "tplAgenciesDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "76b1a27a30a0ed03",
+        "type": "debug",
+        "z": "ed5023f7d42c9c48",
+        "name": "numbersDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d7cdc6e2985db78b",
+        "type": "function",
+        "z": "ed5023f7d42c9c48",
+        "name": "textPayload",
+        "func": "msg.numbers = msg.payload.numbers\nlet s = \"All Snap4City TPL Agencies:\\n\"\nfor (let x of (JSON.parse(msg.payload.tplagencies))) {\n    s += x.name + \"\\n\";\n}\nmsg.payload = s\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "3caca5fdbc63c1b8",
+                "ce7778d1d75784f7"
+            ]
+        ]
+    },
+    {
+        "id": "e899e3834905ac83",
+        "type": "debug",
+        "z": "ed5023f7d42c9c48",
+        "name": "joinDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ce7778d1d75784f7",
+        "type": "debug",
+        "z": "ed5023f7d42c9c48",
+        "name": "textDebug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 380,
+        "wires": []
+    }
+]
