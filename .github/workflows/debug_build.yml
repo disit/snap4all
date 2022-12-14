@@ -29,6 +29,7 @@ jobs:
           exit_on_error() { echo "$1"; exit 1; }
 
           echo "Setting vars"
+          ls -l
 
           if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
               GITHUB_SHA="${{ github.event.pull_request.head.sha }}" # Do not use last merge commit set in GITHUB_SHA
